@@ -4,11 +4,11 @@ import "../styles/Hero.css";
 
 function Hero() {
   const goToPortfolio = () => {
-    // TODO: Navigate to Portfolio section
+    // TODO: Navigate to Portfolio page
   };
 
   const contactMe = () => {
-    // TODO: Navigate to Contact section
+    // TODO: Navigate to Contact page
   };
 
   return (
@@ -18,7 +18,7 @@ function Hero() {
         From Concept to Completion - Let me Help You Turn Your Vision into a
         Reality!
       </h2>
-      <div className="hero-CTAButtons">
+      <div className="hero-buttons">
         <CTAButton
           label="Portfolio"
           action={goToPortfolio}

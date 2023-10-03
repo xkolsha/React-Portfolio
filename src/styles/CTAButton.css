@@ -10,26 +10,21 @@
 }
 
 .btn.btn-primary {
-  background-color: #221f33;
-  color: #fbf8ff;
-}
-
-/* Adding right margin only for the left button in the Hero component */
-.hero-CTAButtons .btn-primary:first-child {
-  margin-right: 1.75rem;
+  background-color: var(--primary-dark);
+  color: var(--white);
 }
 
 .btn.btn-primary:hover {
-  background-color: #8f83ed;
-  color: #221f33;
+  background-color: var(--secondary-highlight);
+  color: var(--primary-dark);
 }
 
 .btn.btn-secondary {
-  background-color: #8f83ed;
-  color: #221f33;
+  background-color: var(--secondary-highlight);
+  color: var(--primary-dark);
 }
 
 .btn.btn-secondary:hover {
-  background-color: #8f83ed;
-  color: #fbf8ff;
+  background-color: var(--secondary-highlight);
+  color: var(--white);
 }

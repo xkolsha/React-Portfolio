@@ -1,3 +1,12 @@
+/* Color theme:
+#221F33 - primary (dark)
+#2D294A - dark accent
+#534C8A - grey
+#8F83ED - secondary (highlight)
+#FBF8FF - white
+#FDFFFC - white accent
+*/
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -12,6 +21,13 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --primary-dark: #221f33;
+  --dark-accent: #2d294a;
+  --grey: #534c8a;
+  --secondary-highlight: #8f83ed;
+  --white: #fbf8ff;
+  --white-accent: #fdfffc;
 }
 
 a {
@@ -67,15 +83,6 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-
-/* Color theme:
-#221F33 - primary (dark)
-#2D294A - dark accent
-#534C8A - grey
-#8F83ED - secondary (highlight)
-#FBF8FF - white
-#FDFFFC - white accent
-*/
 
 html,
 body {
