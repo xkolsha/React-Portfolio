@@ -1,15 +1,14 @@
 import React from "react";
 import Lottie from "lottie-react";
-import "../styles/ServiceCard.css";
 
-const ServiceCard = ({ title, description, animationData }) => {
-  return (
-    <div className="service-card">
+const ServiceCard = ({ title, description, animationData }) => (
+  <div className="service-card">
+    <div className="lottie-container">
       <Lottie animationData={animationData} />
-      <h3>{title}</h3>
-      <p>{description}</p>
     </div>
-  );
-};
+    <h2 className="service-title">{title}</h2>
+    <p className="service-description">{description}</p>
+  </div>
+);
 
 export default ServiceCard;

@@ -1,5 +1,32 @@
 .services-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 -15px; /* Adjusts for the padding on each card */
+}
+
+.service-card {
+  flex: 0 0 calc(50% - 30px); /* Makes it two cards per row */
+  margin: 15px;
+  padding: 20px;
+  box-shadow: 0 0.75em 2em rgba(83, 76, 138, 0.1);
+  background-color: #fdfffc;
+  border-radius: 3em;
+  text-align: center;
+}
+
+.lottie-container {
+  width: 100%;
+  max-width: 250px;
+  margin: auto;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  color: var(--primary-dark);
+}
+
+.service-description {
+  font-size: 1rem;
+  color: var(--grey);
 }
