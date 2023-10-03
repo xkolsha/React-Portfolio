@@ -2,7 +2,7 @@ import React from "react";
 // import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
 // import Clients from "./components/Clients";
-// import Services from "./components/Services";
+import Services from "./components/Services";
 import About from "./components/About";
 // import Resume from "./components/Resume";
 // import Portfolio from "./components/Portfolio";
@@ -15,8 +15,8 @@ function App() {
     <div className="App">
       {/* <Navigation /> */}
       <Hero />
-      {/* <Clients />
-      <Services /> */}
+      {/* <Clients /> */}
+      <Services />
       <About />
       {/* {<Resume />
       <Portfolio />

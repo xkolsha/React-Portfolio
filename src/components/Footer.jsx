@@ -8,7 +8,7 @@ function Footer() {
       <div className="footer-left">
         <img src={imageSrc} alt="Logo" className="footer-logo" />
         <p className="footer-description">
-          Web Developer, Graphic Designer & UX/UI. <br />
+          Full Stack Developer. <br />
           From Concept to Completion - Let me Help You Turn Your Vision into a
           Reality!
         </p>
