@@ -1,0 +1,35 @@
+/* Reusable Button Styles */
+.btn {
+  padding: 1em 2em;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 1.375em;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn.btn-primary {
+  background-color: #221f33;
+  color: #fbf8ff;
+}
+
+/* Adding right margin only for the left button in the Hero component */
+.hero-CTAButtons .btn-primary:first-child {
+  margin-right: 1.75rem;
+}
+
+.btn.btn-primary:hover {
+  background-color: #8f83ed;
+  color: #221f33;
+}
+
+.btn.btn-secondary {
+  background-color: #8f83ed;
+  color: #221f33;
+}
+
+.btn.btn-secondary:hover {
+  background-color: #8f83ed;
+  color: #fbf8ff;
+}
