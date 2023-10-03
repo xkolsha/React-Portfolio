@@ -20,7 +20,10 @@ const About = () => {
         </p>
       </div>
       <div className="about-image">
-        <img src={imageSrc} alt="Description" />
+        <img
+          src={imageSrc}
+          alt="silhouette of a girl gazing towards the horizon"
+        />
       </div>
     </div>
   );

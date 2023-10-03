@@ -1,0 +1,39 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+  background-color: var(--primary-dark);
+  color: var(--white);
+}
+
+.footer-left {
+  flex: 1;
+}
+
+.footer-right {
+  flex: 1;
+}
+
+.footer-logo {
+  width: 200px;
+}
+
+.footer-description {
+  font-size: 1rem;
+  margin-top: 1em;
+}
+
+.social-icons {
+  margin-top: 1em;
+  display: flex;
+  gap: 1em;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
