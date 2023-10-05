@@ -51,25 +51,7 @@
 
 .navbar-links ul li a:hover {
   cursor: pointer;
-  color: var(--secondary);
-}
-
-/* Contact Button */
-.button-primary {
-  background-color: var(--primary-dark);
-  border-radius: 1.375em;
-  padding: 1.625em 2.375em;
-  font-size: 1.125rem;
-  font-weight: 600;
-  text-align: center;
-  color: var(--white);
-  text-decoration: none;
-}
-
-.button-primary:hover {
-  background-color: var(--secondary-highlight);
-  cursor: pointer;
-  color: var(--primary);
+  color: var(--secondary-highlight);
 }
 
 /* Active Link Styling */
