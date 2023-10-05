@@ -80,3 +80,8 @@ button:hover {
     background-color: #f9f9f9;
   }
 }
+
+.center-content {
+  max-width: 90em;
+  margin: 0 auto;
+}

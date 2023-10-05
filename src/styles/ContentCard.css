@@ -1,0 +1,9 @@
+.content-card {
+  flex: 0 0 calc(50% - 30px);
+  margin: 15px;
+  padding: 20px;
+  box-shadow: 0 0.75em 2em rgba(83, 76, 138, 0.1);
+  background-color: #fdfffc;
+  border-radius: 3em;
+  text-align: center;
+}

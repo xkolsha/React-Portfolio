@@ -1,6 +1,7 @@
 import React from "react";
-import ServiceCard from "./ServiceCard";
+import ContentCard from "./ContentCard";
 import "../styles/Services.css";
+import Lottie from "lottie-react";
 import animationData1 from "../assets/animations/Website-Design.json";
 import animationData2 from "../assets/animations/Graphic-Design.json";
 import animationData3 from "../assets/animations/Branding.json";
@@ -37,11 +38,16 @@ const Services = () => {
   return (
     <div className="services-container">
       {services.map((service, index) => (
-        <ServiceCard
+        <ContentCard
           key={index}
           title={service.title}
           description={service.description}
-          animationData={service.animationData}
+          content={
+            <Lottie
+              animationData={service.animationData}
+              className="lottie-container"
+            />
+          }
         />
       ))}
     </div>

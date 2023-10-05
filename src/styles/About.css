@@ -2,31 +2,32 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 1.11rem;
   background-color: var(--white);
   color: var(--primary-dark);
 }
 
 .about-text {
   flex: 1;
-  padding-right: 20px;
+  padding-right: 1.11rem;
 }
 
 .about-title {
-  font-size: 24px;
-  margin-bottom: 16px;
+  font-size: 1.94em;
+  font-weight: 900;
+  margin-bottom: 2.91rem;
   color: var(--primary-dark);
 }
 
 .about-description {
-  font-size: 16px;
+  font-size: 1em;
   line-height: 1.5;
   color: var(--grey);
 }
 
 .about-image {
   flex: 1;
-  max-width: 50%; /* Limit the width of the image container */
+  max-width: 100%; /* Limit the width of the image container */
   overflow: hidden; /* Hide overflow content */
 }
 
@@ -34,4 +35,5 @@
   width: 100%; /* Force the image to fit the container */
   height: auto; /* Maintain aspect ratio */
   object-fit: cover; /* Cover the entire space */
+  border-radius: 3rem;
 }

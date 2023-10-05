@@ -19,7 +19,7 @@ const About = () => {
           diversity.
         </p>
       </div>
-      <div className="about-image">
+      <div className="about-image content-card">
         <img
           src={imageSrc}
           alt="silhouette of a girl gazing towards the horizon"
