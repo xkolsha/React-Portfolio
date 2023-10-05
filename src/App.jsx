@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
 
-const sectionStyle = { marginBottom: "16rem" };
+const sectionStyle = { marginBottom: "18.9em" };
 
 function App() {
   return (
