@@ -4,7 +4,7 @@
   padding: 1.5em 0;
   position: sticky;
   top: 0;
-  box-shadow: 0 0 8px var(--primary);
+  box-shadow: 0 0 8px var(--primary-dark);
   z-index: 999;
   width: 100%;
 }
@@ -56,7 +56,7 @@
 
 /* Contact Button */
 .button-primary {
-  background-color: var(--primary);
+  background-color: var(--primary-dark);
   border-radius: 1.375em;
   padding: 1.625em 2.375em;
   font-size: 1.125rem;
@@ -67,12 +67,12 @@
 }
 
 .button-primary:hover {
-  background-color: var(--secondary);
+  background-color: var(--secondary-highlight);
   cursor: pointer;
   color: var(--primary);
 }
 
 /* Active Link Styling */
 .active {
-  border-bottom: 2px solid var(--secondary);
+  border-bottom: 2px solid var(--secondary-highlight);
 }
