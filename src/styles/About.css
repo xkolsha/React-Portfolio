@@ -22,7 +22,7 @@
 .about-description {
   font-size: 1em;
   line-height: 1.5;
-  color: var(--grey);
+  color: var(--primary-dark);
 }
 
 .about-image {

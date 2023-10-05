@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
-// import Clients from "./components/Clients";
 import Services from "./components/Services";
 import About from "./components/About";
 import Portfolio from "./components/Portfolio";
@@ -10,28 +9,39 @@ import Footer from "./components/Footer";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
 
-const sectionStyle = { marginBottom: "18.9em" };
+const sectionStyle = { marginBottom: "8em" };
 
 function App() {
+  const heroRef = useRef(null);
+  const servicesRef = useRef(null);
+  const aboutRef = useRef(null);
+  const portfolioRef = useRef(null);
+  const contactRef = useRef(null);
+
   return (
     <Router>
       <div className="App">
-        <Navigation />
+        <Navigation
+          heroRef={heroRef}
+          servicesRef={servicesRef}
+          aboutRef={aboutRef}
+          portfolioRef={portfolioRef}
+          contactRef={contactRef}
+        />
         <div className="center-content">
-          <div style={sectionStyle}>
-            <Hero />
+          <div ref={heroRef} style={sectionStyle}>
+            <Hero portfolioRef={portfolioRef} contactRef={contactRef} />
           </div>
-          {/* <div style={sectionStyle}><Clients /></div> */}
-          <div style={sectionStyle}>
+          <div ref={servicesRef} style={sectionStyle}>
             <Services />
           </div>
-          <div style={sectionStyle}>
+          <div ref={aboutRef} style={sectionStyle}>
             <About />
           </div>
-          <div style={sectionStyle}>
+          <div ref={portfolioRef} style={sectionStyle}>
             <Portfolio />
           </div>
-          <div style={sectionStyle}>
+          <div ref={contactRef} style={sectionStyle}>
             <Contact />
           </div>
         </div>

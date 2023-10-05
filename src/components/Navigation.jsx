@@ -1,19 +1,25 @@
 import React from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import CTAButton from "./CTAButton";
 import "../styles/Navigation.css";
 import logo from "../assets/images/nav-logo.png";
 
-const Navigation = () => {
+const Navigation = ({
+  heroRef,
+  servicesRef,
+  aboutRef,
+  portfolioRef,
+  contactRef,
+}) => {
   const location = useLocation();
-  const navigate = useNavigate();
 
+  // Dynamic navigation items
   const navItems = [
-    { name: "Home", path: "/" },
-    { name: "Services", path: "/services" },
-    { name: "About", path: "/about" },
-    { name: "Portfolio", path: "/portfolio" },
-    { name: "Resume", path: "/resume" },
+    { name: "Home", path: "/", ref: heroRef },
+    { name: "Services", path: "/services", ref: servicesRef },
+    { name: "About", path: "/about", ref: aboutRef },
+    { name: "Portfolio", path: "/portfolio", ref: portfolioRef },
+    { name: "Resume", path: "/contact", ref: contactRef },
   ];
 
   const isActive = (path) => {
@@ -21,7 +27,15 @@ const Navigation = () => {
   };
 
   const handleContactClick = () => {
-    navigate("/contact");
+    if (contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToSection = (ref) => {
+    if (ref && ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -36,7 +50,9 @@ const Navigation = () => {
           <ul>
             {navItems.map((item, index) => (
               <li key={index} className={isActive(item.path)}>
-                <Link to={item.path}>{item.name}</Link>
+                <Link to={item.path} onClick={() => scrollToSection(item.ref)}>
+                  {item.name}
+                </Link>
               </li>
             ))}
           </ul>
