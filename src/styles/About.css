@@ -13,14 +13,15 @@
 }
 
 .about-title {
-  font-size: 1.94em;
-  font-weight: 900;
+  font-size: var(--font-h2);
+  font-weight: var(--font-weight-h2);
   margin-bottom: 2.91rem;
   color: var(--primary-dark);
 }
 
 .about-description {
-  font-size: 1em;
+  font-size: var(--font-p);
+  font-weight: var(--font-weight-p);
   line-height: 1.5;
   color: var(--primary-dark);
 }

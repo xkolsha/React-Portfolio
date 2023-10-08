@@ -5,8 +5,8 @@ const ContentCard = ({ title, description, content }) => {
   return (
     <div className="content-card">
       <div className="content-card-content">{content}</div>
-      <h2>{title}</h2>
-      <p>{description}</p>
+      <h2 className="content-title">{title}</h2>
+      <p className="content-description">{description}</p>
     </div>
   );
 };

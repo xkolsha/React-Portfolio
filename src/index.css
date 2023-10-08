@@ -37,6 +37,23 @@ body {
   --secondary-highlight: #8f83ed;
   --white: #fbf8ff;
   --white-accent: #fdfffc;
+
+  /* Typography */
+  --font-title: 5.875em;
+  --font-h1: 4.5em;
+  --font-h2: 2.5em;
+  --font-subtitle: 1.5em;
+  --font-body-bold: 1.125em;
+  --font-p: 1.125em;
+  --font-caption-bold: 1.125em;
+
+  --font-weight-title: 900;
+  --font-weight-h1: 700;
+  --font-weight-h2: 700;
+  --font-weight-subtitle: 500;
+  --font-weight-body-bold: 700;
+  --font-weight-p: 300;
+  --font-weight-caption-bold: 700;
 }
 
 /* Link Styles */

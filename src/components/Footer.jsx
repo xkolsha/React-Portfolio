@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/Footer.css";
+import SocialLinks from "./SocialLinks"; // Import the SocialLinks component
 import imageSrc from "../assets/images/V-Logo-white.png";
 
 function Footer() {
@@ -12,22 +13,7 @@ function Footer() {
           From Concept to Completion - Let me Help You Turn Your Vision into a
           Reality!
         </p>
-        <div className="social-icons">
-          <a
-            href="https://github.com/xkolsha"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
-          <a
-            href="https://linkedin.com/in/aviadkohn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
-        </div>
+        <SocialLinks />
       </div>
       <div className="footer-right">
         <ul className="nav-links">
