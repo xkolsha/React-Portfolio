@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Contact.css";
 import CTAButton from "./CTAButton";
 import SocialLinks from "./SocialLinks";
@@ -9,9 +9,22 @@ const Contact = () => {
   };
 
   const downloadResume = () => {
-    // Placeholder URL for navigating to the resume
-    const resumeURL = "http://www.example.com/path/to/your/resume.pdf";
+    const resumeURL =
+      "https://1drv.ms/b/s!As0hKguCANy1u4xeQtHeKvbkccsPTw?e=4Dscen";
     window.open(resumeURL, "_blank");
+  };
+
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(e.target.value)) {
+      setEmailError("Invalid email address");
+    } else {
+      setEmailError("");
+    }
   };
 
   return (
@@ -21,7 +34,13 @@ const Contact = () => {
         <p>Contact Me. I'll be happy to help!</p>
         <form className="contact-form">
           <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={handleEmailChange}
+          />
+          {emailError && <span>{emailError}</span>}
           <input type="tel" placeholder="Phone" />
           <input type="text" placeholder="Subject" />
           <textarea placeholder="Leave us a message"></textarea>
@@ -30,8 +49,15 @@ const Contact = () => {
       </div>
       <div className="contact-card right-card">
         <h2>Reach me directly!</h2>
-        <p>Email: info@aviadkohn.com</p>
+        <p>
+          Email: <a href="mailto:info@aviadkohn.com">info@aviadkohn.com</a>
+        </p>
         <SocialLinks />
+        <CTAButton
+          label="Download Resume"
+          action={downloadResume}
+          type="btn-secondary"
+        />
       </div>
     </div>
   );

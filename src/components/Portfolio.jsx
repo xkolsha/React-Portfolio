@@ -77,12 +77,12 @@ const Portfolio = () => {
                   {
                     label: "Deployed App",
                     link: project.deployedLink,
-                    type: "btn-secondary",
+                    type: "btn-primary",
                   },
                   {
                     label: "GitHub Repo",
                     link: project.repoLink,
-                    type: "btn-secondary",
+                    type: "btn-primary",
                   },
                 ].map(
                   (button, idx) =>
