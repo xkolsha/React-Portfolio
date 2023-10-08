@@ -1,8 +1,8 @@
 /* Reusable Button Styles */
 .btn {
   padding: 1em 2em;
-  font-size: 1.125rem;
-  font-weight: 600;
+  font-size: var(--font-body-bold);
+  font-weight: var(--font-weight-body-bold);
   border-radius: 1.375em;
   cursor: pointer;
   text-align: center;

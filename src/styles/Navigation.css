@@ -45,7 +45,8 @@
 
 .navbar-links ul li a {
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: var(--font-size-body-bold);
+  font-weight: var(--font-weight-body-bold);
   color: inherit;
 }
 
@@ -56,5 +57,5 @@
 
 /* Active Link Styling */
 .active {
-  border-bottom: 2px solid var(--secondary-highlight);
+  border-bottom: 0.11rem solid var(--secondary-highlight);
 }

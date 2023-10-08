@@ -1,57 +1,65 @@
 import React from "react";
+import CTAButton from "./CTAButton";
 import ContentCard from "./ContentCard";
+import "../styles/Portfolio.css";
+import atlanticImage from "../assets/images/Atlantic.jpeg";
+import fontasticImage from "../assets/images/Fontastic.jpeg";
+import educationImage from "../assets/images/Education.jpg";
+import gmsImage from "../assets/images/GMS.jpg";
+import harmonyImage from "../assets/images/harmony.png";
+import beaconImage from "../assets/images/beacon.jpg";
 
 const Portfolio = () => {
   const projects = [
     {
+      title: "Atlantic Glamping: Interactive Full-Stack Project",
+      description:
+        "A full-stack web application for booking glamping experiences.",
+      image: atlanticImage,
+      deployedLink: "https://atlantic-glamping-6972d1dfb7e3.herokuapp.com/",
+      repoLink: "https://github.com/xkolsha/Atlantic-Glamping",
+    },
+    {
+      title: "Fontastic Fusion: Typography Meets Color",
+      description: "A project where typography and color schemes are explored.",
+      image: fontasticImage,
+      deployedLink:
+        "https://xkolsha.github.io/Project-1-Interactive-Front-End-Application/index.html",
+      repoLink:
+        "https://github.com/xkolsha/Project-1-Interactive-Front-End-Application",
+    },
+    {
       title: "Branding for Education Transform",
       description: "A complete branding solution for educational institutions.",
-      image: "path/to/education-transform-image.jpg",
-      deployedLink: "https://education-transform.com",
-      repoLink: "https://github.com/yourusername/education-transform",
+      image: educationImage,
+      deployedLink: "https://www.education-transform.com/",
     },
     {
       title: "Promotional video for G.M.S. Technology Ltd",
       description:
         "A promotional video showcasing the products of G.M.S. Technology Ltd.",
-      image: "path/to/gms-technology-image.jpg",
-      deployedLink: "https://gms-promo-video.com",
-      repoLink: "https://github.com/yourusername/gms-promo-video",
-    },
-    {
-      title: "Case Study for Beacon App",
-      description: "An in-depth case study for the Beacon App project.",
-      image: "path/to/beacon-app-image.jpg",
-      deployedLink: "https://beacon-app-casestudy.com",
-      repoLink: "https://github.com/yourusername/beacon-app",
+      image: gmsImage,
+      deployedLink: "https://www.youtube.com/watch?v=i2nGfu6W9mY",
     },
     {
       title: "Branding for Harmony Construction Consultant",
       description:
         "Branding solutions tailored for Harmony Construction Consultant.",
-      image: "path/to/harmony-construction-image.jpg",
-      deployedLink: "https://harmony-construction.com",
-      repoLink: "https://github.com/yourusername/harmony-construction",
+      image: harmonyImage,
+      deployedLink:
+        "https://uploads-ssl.webflow.com/62a8e0664d1b8a8f8fc19148/62b53b1e6971834c30ad5929_Harmony%20Brand%20Book%202.pdf",
     },
     {
-      title: "Fontastic Fusion: Typography Meets Color",
-      description: "A project where typography and color schemes are explored.",
-      image: "path/to/fontastic-fusion-image.jpg",
-      deployedLink: "https://fontastic-fusion.com",
-      repoLink: "https://github.com/yourusername/fontastic-fusion",
-    },
-    {
-      title: "Atlantic Glamping: Interactive Full-Stack Project",
-      description:
-        "A full-stack web application for booking glamping experiences.",
-      image: "path/to/atlantic-glamping-image.jpg",
-      deployedLink: "https://atlantic-glamping.com",
-      repoLink: "https://github.com/yourusername/atlantic-glamping",
+      title: "Case Study for Beacon App",
+      description: "An in-depth case study for the Beacon App project.",
+      image: beaconImage,
+      deployedLink: "https://beacon-app-casestudy.com",
+      repoLink: "https://github.com/yourusername/beacon-app",
     },
   ];
 
   return (
-    <section id="portfolio">
+    <section id="portfolio" className="section-container">
       {projects.map((project, index) => (
         <ContentCard
           key={index}
@@ -59,24 +67,34 @@ const Portfolio = () => {
           description={project.description}
           content={
             <>
-              <img src={project.image} alt={project.title} />
-              <div>
-                <a
-                  href={project.deployedLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Deployed App
-                </a>
-              </div>
-              <div>
-                <a
-                  href={project.repoLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub Repo
-                </a>
+              <img
+                src={project.image}
+                alt={project.title}
+                className="project-img"
+              />
+              <div className="project-links">
+                {[
+                  {
+                    label: "Deployed App",
+                    link: project.deployedLink,
+                    type: "btn-secondary",
+                  },
+                  {
+                    label: "GitHub Repo",
+                    link: project.repoLink,
+                    type: "btn-secondary",
+                  },
+                ].map(
+                  (button, idx) =>
+                    button.link && (
+                      <CTAButton
+                        key={idx}
+                        label={button.label}
+                        action={() => window.open(button.link, "_blank")}
+                        type={button.type}
+                      />
+                    )
+                )}
               </div>
             </>
           }

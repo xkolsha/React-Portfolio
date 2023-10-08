@@ -1,3 +1,4 @@
+/* Footer Base Styles */
 .footer {
   display: flex;
   justify-content: space-between;
@@ -6,12 +7,12 @@
   color: var(--white);
 }
 
+/* Left Section */
 .footer-left {
   flex: 1;
-}
-
-.footer-right {
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
 .footer-logo {
@@ -20,15 +21,23 @@
 
 .footer-description {
   font-size: 1rem;
-  margin-top: 1em;
 }
 
-.social-icons {
-  margin-top: 1em;
+/* Social Icons */
+.social-media-links {
   display: flex;
   gap: 1em;
 }
 
+/* Right Section */
+.footer-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/* Navigation Links */
 .nav-links {
   list-style: none;
   padding: 0;
