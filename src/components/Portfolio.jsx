@@ -6,7 +6,7 @@ import atlanticImage from "../assets/images/Atlantic.jpeg";
 import fontasticImage from "../assets/images/Fontastic.jpeg";
 import educationImage from "../assets/images/Education.jpg";
 import gmsImage from "../assets/images/GMS.jpg";
-import harmonyImage from "../assets/images/Harmony.jpg";
+import harmonyImage from "../assets/images/Harmony.png";
 import beaconImage from "../assets/images/Beacon.jpg";
 
 const Portfolio = () => {
