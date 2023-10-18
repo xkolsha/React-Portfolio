@@ -1,5 +1,6 @@
 /* Reusable Button Styles */
 .btn {
+  margin-top: 1em;
   padding: 1em 2em;
   font-size: var(--font-body-bold);
   font-weight: var(--font-weight-body-bold);

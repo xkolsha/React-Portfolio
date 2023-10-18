@@ -36,3 +36,8 @@
   color: inherit;
   text-decoration: none;
 }
+
+.center-content-grid {
+  display: grid;
+  place-items: center;
+}

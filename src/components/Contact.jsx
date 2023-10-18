@@ -48,16 +48,18 @@ const Contact = () => {
         </form>
       </div> */}
       <div className="contact-card">
-        <h2>Reach me directly!</h2>
+        <h1>Reach me directly!</h1>
         <p>
           Email: <a href="mailto:info@aviadkohn.com">info@aviadkohn.com</a>
         </p>
-        <SocialLinks />
-        <CTAButton
-          label="Download Resume"
-          action={downloadResume}
-          type="btn-secondary"
-        />
+        <div className="center-content-grid">
+          <SocialLinks />
+          <CTAButton
+            label="Download Resume"
+            action={downloadResume}
+            type="btn-secondary"
+          />
+        </div>
       </div>
     </div>
   );
