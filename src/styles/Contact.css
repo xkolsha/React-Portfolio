@@ -1,8 +1,8 @@
 .contact-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
-  flex-wrap: wrap;
 }
 
 .contact-card {
@@ -26,6 +26,7 @@
 .contact-form button {
   margin: 10px;
   padding: 5px;
+  width: 90%;
 }
 
 .contact-info {
@@ -40,4 +41,19 @@
 .center-content-grid {
   display: grid;
   place-items: center;
+}
+
+/* Responsive Styles */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .contact-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    width: 100%;
+  }
 }
