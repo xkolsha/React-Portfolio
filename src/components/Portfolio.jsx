@@ -2,6 +2,7 @@ import React from "react";
 import CTAButton from "./CTAButton";
 import ContentCard from "./ContentCard";
 import "../styles/Portfolio.css";
+import factvImage from "../assets/images/factv.png";
 import atlanticImage from "../assets/images/Atlantic.jpeg";
 import fontasticImage from "../assets/images/Fontastic.jpeg";
 import educationImage from "../assets/images/Education.jpg";
@@ -11,6 +12,15 @@ import beaconImage from "../assets/images/Beacon.jpg";
 
 const Portfolio = () => {
   const projects = [
+    {
+      title: "FACT-V-Lounge: Interactive MERN Stack Application",
+      description:
+        "MERN stack application for booking events and order food and drinks using Stripe.",
+      image: factvImage,
+      deployedLink:
+        "https://fact-v-tech-lounge-client-f58d96d137e5.herokuapp.com/",
+      repoLink: "https://github.com/xkolsha/fact-v-tech-lounge",
+    },
     {
       title: "Atlantic Glamping: Interactive Full-Stack Project",
       description:
