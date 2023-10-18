@@ -29,7 +29,7 @@ const Contact = () => {
 
   return (
     <div className="contact-container">
-      <div className="contact-card left-card">
+      {/* <div className="contact-card left-card">
         <h2>Get in touch</h2>
         <p>Contact Me. I'll be happy to help!</p>
         <form className="contact-form">
@@ -46,8 +46,8 @@ const Contact = () => {
           <textarea placeholder="Leave us a message"></textarea>
           <CTAButton label="Submit" action={handleForm} type="btn-primary" />
         </form>
-      </div>
-      <div className="contact-card right-card">
+      </div> */}
+      <div className="contact-card">
         <h2>Reach me directly!</h2>
         <p>
           Email: <a href="mailto:info@aviadkohn.com">info@aviadkohn.com</a>

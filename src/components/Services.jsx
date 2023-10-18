@@ -21,7 +21,7 @@ const services = [
     animationData: animationData2,
   },
   {
-    title: "BBranding & Strategy",
+    title: "Branding & Strategy",
     description:
       "Investing in your business branding is how you outperform and outlast your competitors. The goal is to attract and retain loyal customers by delivering a product that always aligns with the brand's promises. Keep your competition from getting ahead - Contact me today and let me help you create a solid and consistent brand that will set you apart from the rest.",
     animationData: animationData3,
