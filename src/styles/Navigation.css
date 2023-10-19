@@ -59,3 +59,44 @@
 .active {
   border-bottom: 0.11rem solid var(--secondary-highlight);
 }
+
+/* Menu Toggle Button */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 600px) {
+  .menu-toggle {
+    display: inline-block;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    background-color: var(--white);
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-links ul li {
+    margin: 0;
+  }
+}

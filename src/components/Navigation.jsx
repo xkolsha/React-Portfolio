@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import CTAButton from "./CTAButton";
+// import CTAButton from "./CTAButton";
 import "../styles/Navigation.css";
 import logo from "../assets/images/nav-logo.png";
 
@@ -11,15 +11,15 @@ const Navigation = ({
   portfolioRef,
   contactRef,
 }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
-  // Dynamic navigation items
   const navItems = [
     { name: "Home", path: "/", ref: heroRef },
     { name: "Services", path: "/services", ref: servicesRef },
     { name: "About", path: "/about", ref: aboutRef },
     { name: "Portfolio", path: "/portfolio", ref: portfolioRef },
-    { name: "Resume", path: "/contact", ref: contactRef },
+    { name: "Contact me", path: "/contact", ref: contactRef },
   ];
 
   const isActive = (path) => {
@@ -38,6 +38,10 @@ const Navigation = ({
     }
   };
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <header className="nav-main" role="banner">
       <div className="nav-wrapper">
@@ -45,8 +49,14 @@ const Navigation = ({
           <Link to="/" aria-label="Home">
             <img src={logo} alt="logo" className="navbar-logo" />
           </Link>
+          <button className="menu-toggle" onClick={toggleMenu}>
+            ☰
+          </button>
         </div>
-        <nav className="navbar-links" role="navigation">
+        <nav
+          className={`navbar-links ${menuOpen ? "open" : ""}`}
+          role="navigation"
+        >
           <ul>
             {navItems.map((item, index) => (
               <li key={index} className={isActive(item.path)}>
@@ -57,13 +67,13 @@ const Navigation = ({
             ))}
           </ul>
         </nav>
-        <div className="header-right">
+        {/* <div className="header-right">
           <CTAButton
             label="Contact Me"
             action={handleContactClick}
             type="btn-primary"
           />
-        </div>
+        </div> */}
       </div>
     </header>
   );
