@@ -53,7 +53,7 @@
 /* Responsive Styles */
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 768px) {
   .hero {
     flex-direction: row;
     justify-content: space-between;
@@ -68,5 +68,18 @@
     flex-direction: row;
     gap: 2rem;
     align-items: flex-start;
+  }
+  .hero h1 {
+    color: var(--primary-dark);
+    font-size: var(--font-title);
+    font-weight: var(--font-weight-title);
+    margin-bottom: 2rem;
+  }
+
+  .hero h2 {
+    color: var(--grey);
+    font-size: var(--font-subtitle);
+    font-weight: var(--font-weight-subtitle);
+    margin-bottom: 2rem;
   }
 }
