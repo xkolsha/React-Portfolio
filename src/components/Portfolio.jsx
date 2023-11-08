@@ -18,7 +18,7 @@ const Portfolio = () => {
         "MERN stack application for booking events and order food and drinks using Stripe.",
       image: factvImage,
       deployedLink:
-        "https://fact-v-tech-lounge-client-f58d96d137e5.herokuapp.com/",
+        "https://main--fact-v.netlify.app/",
       repoLink: "https://github.com/xkolsha/fact-v-tech-lounge",
     },
     {
