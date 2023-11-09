@@ -26,7 +26,7 @@ const Portfolio = () => {
       description:
         "A full-stack web application for booking glamping experiences.",
       image: atlanticImage,
-      deployedLink: "https://atlantic-glamping-6972d1dfb7e3.herokuapp.com/",
+      deployedLink: "https://atlantic-glamping-1-32ab0f56f377.herokuapp.com/",
       repoLink: "https://github.com/xkolsha/Atlantic-Glamping",
     },
     {
