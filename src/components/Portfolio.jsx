@@ -112,6 +112,16 @@ const Portfolio = () => {
                       GitHub Repo
                     </Button>
                   )}
+                  {project.videoLink && (
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      onClick={() => window.open(project.videoLink, "_blank")}
+                      sx={{ ml: 1 }}
+                    >
+                      Watch Video
+                    </Button>
+                  )}
                 </Box>
               </CardContent>
             </Card>
