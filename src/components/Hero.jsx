@@ -1,6 +1,5 @@
 import React from "react";
-import CTAButton from "./CTAButton";
-import "../styles/Hero.css";
+import { Button, Typography, Box, Grid, Container } from "@mui/material";
 import heroImg from "../assets/images/Linkedin Profile Image1.png";
 
 const Hero = ({ portfolioRef, contactRef }) => {
@@ -24,28 +23,34 @@ const Hero = ({ portfolioRef, contactRef }) => {
   ];
 
   return (
-    <div className="hero">
-      <div className="hero-content">
-        <h1>Full Stack Developer</h1>
-        <h2>
-          From Concept to Completion - Let me Help You Turn Your Vision into a
-          Reality!
-        </h2>
-        <div className="hero-buttons">
-          {buttons.map((button, index) => (
-            <CTAButton
-              key={index}
-              label={button.label}
-              action={button.action}
-              type={button.type}
-            />
-          ))}
-        </div>
-      </div>
-      <div className="hero-photo">
-        <img src={heroImg} alt="Hero" />
-      </div>
-    </div>
+    <Container maxWidth="lg" sx={{ textAlign: "center", py: 8 }}>
+      <Grid container spacing={2} alignItems="center" justifyContent="center">
+        <Grid item xs={12} md={6}>
+          <Typography variant="h2" component="h1" gutterBottom>
+            Full Stack Developer
+          </Typography>
+          <Typography variant="h5" gutterBottom>
+            From Concept to Completion - Let me Help You Turn Your Vision into a
+            Reality!
+          </Typography>
+          <Box sx={{ "& > button": { m: 1 } }}>
+            <Button variant="contained" color="primary" onClick={goToPortfolio}>
+              Portfolio
+            </Button>
+            <Button variant="contained" color="primary" onClick={contactMe}>
+              Contact Me
+            </Button>
+          </Box>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <img
+            src={heroImg}
+            alt="Hero"
+            style={{ maxWidth: "100%", height: "auto" }}
+          />
+        </Grid>
+      </Grid>
+    </Container>
   );
 };
 

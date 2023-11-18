@@ -1,36 +1,57 @@
-import React from "react";
-import "../styles/Footer.css";
-import SocialLinks from "./SocialLinks"; // Import the SocialLinks component
+import { Box, Typography, Link, Grid, CardMedia } from "@mui/material";
+import SocialLinks from "./SocialLinks";
 import imageSrc from "../assets/images/V-Logo-white.png";
 
 function Footer() {
   return (
-    <footer className="footer">
-      <div className="footer-container">
-        <div className="footer-left">
-          <img src={imageSrc} alt="Logo" className="footer-logo" />
-          <p className="footer-description">
-            Full Stack Developer. <br />
-            From Concept to Completion - Let me Help You Turn Your Vision into a
-            Reality!
-          </p>
-          <SocialLinks />
-        </div>
-        <div className="footer-right">
-          <ul className="nav-links">
-            <li>
-              <a href="#portfolio">Portfolio</a>
-            </li>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </footer>
+    <Box
+      component="footer"
+      sx={{ bgcolor: "primary.main", color: "white", py: 4, px: 2 }}
+    >
+      <Grid container justifyContent="space-between" alignItems="center">
+        <Grid item xs={12} sm={6}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+            }}
+          >
+            <CardMedia
+              component="img"
+              image={imageSrc}
+              alt="Logo"
+              sx={{ width: 100, mb: 2 }}
+            />
+            <Typography variant="body2">
+              Full Stack Developer. <br />
+              From Concept to Completion - Let me Help You Turn Your Vision into
+              a Reality!
+            </Typography>
+            <SocialLinks />
+          </Box>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-end",
+            }}
+          >
+            <Link href="#portfolio" color="inherit" sx={{ mb: 1 }}>
+              Portfolio
+            </Link>
+            <Link href="#about" color="inherit" sx={{ mb: 1 }}>
+              About
+            </Link>
+            <Link href="#contact" color="inherit">
+              Contact
+            </Link>
+          </Box>
+        </Grid>
+      </Grid>
+    </Box>
   );
 }
 

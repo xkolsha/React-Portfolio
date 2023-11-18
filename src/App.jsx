@@ -1,4 +1,6 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { ThemeProvider } from "@mui/material/styles";
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
@@ -6,10 +8,7 @@ import About from "./components/About";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import { BrowserRouter as Router } from "react-router-dom";
-import "./index.css";
-
-const sectionStyle = { marginBottom: "8em" };
+import theme from "./theme";
 
 function App() {
   const heroRef = useRef(null);
@@ -19,8 +18,8 @@ function App() {
   const contactRef = useRef(null);
 
   return (
-    <Router>
-      <div className="App">
+    <ThemeProvider theme={theme}>
+      <Router>
         <Navigation
           heroRef={heroRef}
           servicesRef={servicesRef}
@@ -28,26 +27,31 @@ function App() {
           portfolioRef={portfolioRef}
           contactRef={contactRef}
         />
-        <div className="center-content">
-          <div ref={heroRef} style={sectionStyle}>
-            <Hero portfolioRef={portfolioRef} contactRef={contactRef} />
-          </div>
-          <div ref={servicesRef} style={sectionStyle}>
+        <div style={{ paddingTop: "64px" }}>
+          <div ref={heroRef}>
+            <Hero />
+          </div>{" "}
+          {/* Hero Section */}
+          <div ref={servicesRef}>
             <Services />
-          </div>
-          <div ref={aboutRef} style={sectionStyle}>
+          </div>{" "}
+          {/* Services Section */}
+          <div ref={aboutRef}>
             <About />
-          </div>
-          <div ref={portfolioRef} style={sectionStyle}>
+          </div>{" "}
+          {/* About Section */}
+          <div ref={portfolioRef}>
             <Portfolio />
-          </div>
-          <div ref={contactRef} style={sectionStyle}>
+          </div>{" "}
+          {/* Portfolio Section */}
+          <div ref={contactRef}>
             <Contact />
-          </div>
+          </div>{" "}
+          {/* Contact Section */}
         </div>
-        <Footer />
-      </div>
-    </Router>
+        <Footer /> {/* Footer Section */}
+      </Router>
+    </ThemeProvider>
   );
 }
 

@@ -1,6 +1,4 @@
-import React from "react";
-import ContentCard from "./ContentCard";
-import "../styles/Services.css";
+import { Card, CardContent, Typography, Grid, Box } from "@mui/material";
 import Lottie from "lottie-react";
 import animationData1 from "../assets/animations/Website-Design.json";
 import animationData2 from "../assets/animations/Graphic-Design.json";
@@ -36,21 +34,47 @@ const services = [
 
 const Services = () => {
   return (
-    <div className="services-container">
-      {services.map((service, index) => (
-        <ContentCard
-          key={index}
-          title={service.title}
-          description={service.description}
-          content={
-            <Lottie
-              animationData={service.animationData}
-              className="lottie-container"
-            />
-          }
-        />
-      ))}
-    </div>
+    <Box sx={{ flexGrow: 1, padding: 8 }}>
+      <Grid container spacing={8}>
+        {services.map((service, index) => (
+          <Grid item xs={12} sm={6} md={6} key={index}>
+            <Card raised sx={{ height: "100%" }}>
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {service.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {service.description}
+                </Typography>
+                <Box
+                  sx={{
+                    marginTop: 2,
+                    height: "30vh",
+                    width: "100%",
+                    position: "relative",
+                    overflow: "hidden",
+                  }}
+                >
+                  <Lottie
+                    animationData={service.animationData}
+                    style={{
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                      height: "100%",
+                      width: "auto",
+                      minHeight: "100%",
+                      minWidth: "100%",
+                    }}
+                  />
+                </Box>
+              </CardContent>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
   );
 };
 
