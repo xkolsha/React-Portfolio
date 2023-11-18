@@ -21,8 +21,7 @@ const projects = [
     description:
       "MERN stack application for booking events and order food and drinks using Stripe.",
     image: factvImage,
-    deployedLink:
-      "https://fact-v-tech-lounge-client-f58d96d137e5.herokuapp.com/",
+    deployedLink: "https://main--fact-v.netlify.app/",
     repoLink: "https://github.com/xkolsha/fact-v-tech-lounge",
   },
   {
@@ -30,7 +29,7 @@ const projects = [
     description:
       "A full-stack web application for booking glamping experiences.",
     image: atlanticImage,
-    deployedLink: "https://atlantic-glamping-6972d1dfb7e3.herokuapp.com/",
+    deployedLink: "https://atlantic-glamping-1-32ab0f56f377.herokuapp.com/",
     repoLink: "https://github.com/xkolsha/Atlantic-Glamping",
   },
   {
