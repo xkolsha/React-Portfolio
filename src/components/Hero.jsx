@@ -1,26 +1,13 @@
-import React from "react";
+import PropTypes from "prop-types";
 import { Button, Typography, Box, Grid, Container } from "@mui/material";
 import heroImg from "../assets/images/Linkedin Profile Image1.png";
 
 const Hero = ({ portfolioRef, contactRef }) => {
-  const goToPortfolio = () => {
-    console.log("Go to Portfolio clicked", portfolioRef); // Debugging line
-    if (portfolioRef && portfolioRef.current) {
-      portfolioRef.current.scrollIntoView({ behavior: "smooth" });
+  const handleScrollToRef = (ref) => {
+    if (ref && ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
     }
   };
-
-  const contactMe = () => {
-    console.log("Contact Me clicked", contactRef); // Debugging line
-    if (contactRef && contactRef.current) {
-      contactRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const buttons = [
-    { label: "Portfolio", action: goToPortfolio, type: "btn-primary" },
-    { label: "Contact Me", action: contactMe, type: "btn-primary" },
-  ];
 
   return (
     <Container maxWidth="lg" sx={{ textAlign: "center", py: 8 }}>
@@ -34,10 +21,18 @@ const Hero = ({ portfolioRef, contactRef }) => {
             Reality!
           </Typography>
           <Box sx={{ "& > button": { m: 1 } }}>
-            <Button variant="contained" color="primary" onClick={goToPortfolio}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => handleScrollToRef(portfolioRef)}
+            >
               Portfolio
             </Button>
-            <Button variant="contained" color="primary" onClick={contactMe}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => handleScrollToRef(contactRef)}
+            >
               Contact Me
             </Button>
           </Box>
@@ -52,6 +47,17 @@ const Hero = ({ portfolioRef, contactRef }) => {
       </Grid>
     </Container>
   );
+};
+
+Hero.propTypes = {
+  portfolioRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  ]),
+  contactRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  ]),
 };
 
 export default Hero;

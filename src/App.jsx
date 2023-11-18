@@ -28,10 +28,7 @@ function App() {
           contactRef={contactRef}
         />
         <div style={{ paddingTop: "64px" }}>
-          <div ref={heroRef}>
-            <Hero />
-          </div>{" "}
-          {/* Hero Section */}
+          <Hero portfolioRef={portfolioRef} contactRef={contactRef} />
           <div ref={servicesRef}>
             <Services />
           </div>{" "}
@@ -42,11 +39,11 @@ function App() {
           {/* About Section */}
           <div ref={portfolioRef}>
             <Portfolio />
-          </div>{" "}
+          </div>
           {/* Portfolio Section */}
           <div ref={contactRef}>
             <Contact />
-          </div>{" "}
+          </div>
           {/* Contact Section */}
         </div>
         <Footer /> {/* Footer Section */}

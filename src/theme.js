@@ -1,68 +1,38 @@
 import { createTheme } from "@mui/material/styles";
 
-const theme = createTheme({
+// Updated theme options
+export const themeOptions = {
   palette: {
+    mode: "light",
     primary: {
-      main: "#221f33", // primary-dark
-      contrastText: "#fbf8ff", // white
+      main: "#221f33",
+      contrastText: "#fbf8ff",
     },
     secondary: {
-      main: "#8f83ed", // secondary-highlight
+      main: "#8f83ed",
+      contrastText: "#fbf8ff",
+    },
+    divider: "rgba(34,31,51,0.16)",
+    text: {
+      secondary: "#2d294a",
+      primary: "#221F33",
+    },
+    error: {
+      main: "#FF3562",
+      contrastText: "#fbf8ff",
     },
     background: {
-      default: "#fdfffc", // white-accent
-    },
-    text: {
-      primary: "#2d294a", // dark-accent
-      secondary: "#534c8a", // grey
+      default: "#fbf8ff",
+      paper: "#fbf8ff",
     },
   },
   typography: {
-    fontFamily: "'Aileron', sans-serif",
-    h1: {
-      fontSize: "4.5em",
-      fontWeight: 700,
-    },
-    h2: {
-      fontSize: "2.5em",
-      fontWeight: 700,
-    },
-    h3: {
-      fontSize: "2em",
-      fontWeight: 500,
-    },
-    body1: {
-      fontSize: "1.125em",
-      fontWeight: 300,
-    },
-    button: {
-      fontWeight: 500,
-    },
+    fontSize: 16,
+    fontFamily: '"Noto Sans Display", "Helvetica", "Arial", sans-serif',
   },
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          borderRadius: 8,
-        },
-      },
-    },
-    MuiAppBar: {
-      styleOverrides: {
-        root: {
-          boxShadow: "none",
-        },
-      },
-    },
-    MuiCard: {
-      styleOverrides: {
-        root: {
-          borderRadius: 12,
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
-        },
-      },
-    },
-  },
-});
+};
+
+// Create a theme instance using the updated themeOptions
+const theme = createTheme(themeOptions);
 
 export default theme;
