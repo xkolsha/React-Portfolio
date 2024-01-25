@@ -1,7 +1,7 @@
+// theme.js
 import { createTheme } from "@mui/material/styles";
 
-// Updated theme options
-export const themeOptions = {
+const theme = createTheme({
   palette: {
     mode: "light",
     primary: {
@@ -12,11 +12,6 @@ export const themeOptions = {
       main: "#8f83ed",
       contrastText: "#fbf8ff",
     },
-    divider: "rgba(34,31,51,0.16)",
-    text: {
-      secondary: "#2d294a",
-      primary: "#221F33",
-    },
     error: {
       main: "#FF3562",
       contrastText: "#fbf8ff",
@@ -25,14 +20,26 @@ export const themeOptions = {
       default: "#fbf8ff",
       paper: "#fbf8ff",
     },
+    divider: "rgba(34,31,51,0.16)",
+    text: {
+      secondary: "#2d294a",
+      primary: "#221F33",
+    },
   },
   typography: {
     fontSize: 16,
-    fontFamily: '"Noto Sans Display", "Helvetica", "Arial", sans-serif',
+    htmlFontSize: 18,
+    fontFamily: "Open Sans, Arial, sans-serif",
   },
-};
-
-// Create a theme instance using the updated themeOptions
-const theme = createTheme(themeOptions);
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 8,
+        },
+      },
+    },
+  },
+});
 
 export default theme;

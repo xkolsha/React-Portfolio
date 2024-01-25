@@ -1,4 +1,13 @@
-import { Card, CardContent, Typography, Grid, Box } from "@mui/material";
+import PropTypes from "prop-types";
+import {
+  Card,
+  CardContent,
+  Container,
+  Typography,
+  Grid,
+  Box,
+  useTheme,
+} from "@mui/material";
 import Lottie from "lottie-react";
 import animationData1 from "../assets/animations/Website-Design.json";
 import animationData2 from "../assets/animations/Graphic-Design.json";
@@ -32,50 +41,72 @@ const services = [
   },
 ];
 
+const lottieStyle = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  height: "100%",
+  width: "auto",
+  minHeight: "100%",
+  minWidth: "100%",
+};
+
 const Services = () => {
+  const theme = useTheme(); // Get the theme
+  const cardBorderRadius = theme.shape.borderRadius; // Get the border radius from the theme
+
   return (
-    <Box sx={{ flexGrow: 1, padding: 8 }}>
-      <Grid container spacing={8}>
-        {services.map((service, index) => (
-          <Grid item xs={12} sm={6} md={6} key={index}>
-            <Card raised sx={{ height: "100%" }}>
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  {service.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {service.description}
-                </Typography>
-                <Box
-                  sx={{
-                    marginTop: 2,
-                    height: "30vh",
-                    width: "100%",
-                    position: "relative",
-                    overflow: "hidden",
-                  }}
-                >
-                  <Lottie
-                    animationData={service.animationData}
-                    style={{
-                      position: "absolute",
-                      top: "50%",
-                      left: "50%",
-                      transform: "translate(-50%, -50%)",
-                      height: "100%",
-                      width: "auto",
-                      minHeight: "100%",
-                      minWidth: "100%",
+    <Container maxWidth="lg" sx={{ py: 6 }}>
+      <Box sx={{ flexGrow: 1, padding: 8 }}>
+        <Grid container spacing={8}>
+          {services.map((service) => (
+            <Grid item xs={12} sm={6} md={6} key={service.title}>
+              <Card
+                raised
+                sx={{ height: "100%", borderRadius: cardBorderRadius }}
+              >
+                {" "}
+                {/* Apply the border radius */}
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    {service.title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {service.description}
+                  </Typography>
+                  <Box
+                    sx={{
+                      marginTop: 2,
+                      height: "30vh",
+                      width: "100%",
+                      position: "relative",
+                      overflow: "hidden",
                     }}
-                  />
-                </Box>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
+                  >
+                    <Lottie
+                      animationData={service.animationData}
+                      style={lottieStyle}
+                    />
+                  </Box>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+    </Container>
   );
+};
+
+Services.propTypes = {
+  services: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      animationData: PropTypes.object.isRequired,
+    })
+  ),
 };
 
 export default Services;

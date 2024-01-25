@@ -8,7 +8,7 @@ import About from "./components/About";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import theme from "./theme"; // Ensure the correct path to your theme file
+import theme from "./theme";
 
 function App() {
   const heroRef = useRef(null);
