@@ -77,6 +77,19 @@ const Portfolio = () => {
   return (
     <Container maxWidth="lg" sx={{ py: 6 }}>
       <Box sx={{ padding: 4 }}>
+        <Typography
+          variant="h2"
+          component="h2"
+          align="center"
+          gutterBottom
+          sx={{
+            fontWeight: "bold",
+            color: (theme) => theme.palette.primary.main,
+            pb: 4,
+          }}
+        >
+          Portfolio
+        </Typography>
         <Grid container spacing={4}>
           {projects.map((project, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
@@ -104,7 +117,7 @@ const Portfolio = () => {
                     {project.deployedLink && (
                       <Button
                         variant="contained"
-                        color="primary"
+                        color="secondary"
                         onClick={() =>
                           window.open(project.deployedLink, "_blank")
                         }
@@ -117,14 +130,14 @@ const Portfolio = () => {
                         variant="contained"
                         color="primary"
                         onClick={() => window.open(project.repoLink, "_blank")}
-                        sx={{ ml: 1 }}
+                        sx={{ ml: 3 }}
                       >
                         GitHub Repo
                       </Button>
                     )}
                     {project.videoLink && (
                       <Button
-                        variant="contained"
+                        variant="outlined"
                         color="primary"
                         onClick={() => window.open(project.videoLink, "_blank")}
                         sx={{ ml: 1 }}

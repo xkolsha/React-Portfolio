@@ -58,7 +58,20 @@ const Services = () => {
 
   return (
     <Container maxWidth="lg" sx={{ py: 6 }}>
-      <Box sx={{ flexGrow: 1, padding: 8 }}>
+      <Typography
+        variant="h2"
+        component="h2"
+        align="center"
+        gutterBottom
+        sx={{
+          fontWeight: "bold",
+          color: (theme) => theme.palette.primary.main,
+          pb: 4,
+        }}
+      >
+        Services
+      </Typography>
+      <Box sx={{ flexGrow: 1, padding: 6 }}>
         <Grid container spacing={8}>
           {services.map((service) => (
             <Grid item xs={12} sm={6} md={6} key={service.title}>

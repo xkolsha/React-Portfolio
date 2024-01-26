@@ -20,6 +20,7 @@ const Hero = ({ portfolioRef, contactRef }) => {
         color: theme.palette.primary.main,
         position: "relative",
         backgroundImage: `url(${Background})`,
+        // backgroundColor: "transparent",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
@@ -69,7 +70,7 @@ const Hero = ({ portfolioRef, contactRef }) => {
               </Button>
               <Button
                 variant="outlined"
-                color="secondary"
+                color="primary"
                 onClick={() => handleScrollToRef(portfolioRef)}
               >
                 Portfolio
