@@ -103,6 +103,7 @@ const Navigation = ({ servicesRef, aboutRef, portfolioRef, contactRef }) => {
                     sx={{
                       color: "background.paper",
                       "&:hover": { color: "secondary.light" },
+                      fontWeight: "400",
                     }}
                     onClick={() => scrollToSection(item.ref)}
                   >
@@ -156,7 +157,7 @@ const Navigation = ({ servicesRef, aboutRef, portfolioRef, contactRef }) => {
                   scrollToSection(item.ref);
                 }}
               >
-                <ListItemText primary={item.label} />
+                <ListItemText primary={item.label} sx={{ fontWeight: "400" }} />
               </ListItemButton>
             ))}
             {/* Social Links in Drawer */}

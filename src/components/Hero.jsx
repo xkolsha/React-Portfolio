@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import { Button, Typography, Box, Grid, Container } from "@mui/material";
-import heroImg from "../assets/images/Linkedin Profile Image1.png";
+import heroImg from "../assets/images/Linkedin Profile Image - Round.png";
 import { useTheme } from "@mui/material/styles";
-// import WaveBackground from "../assets/images/Background.webp";
+import Background from "../assets/images/WaveBackground.png";
 
 const Hero = ({ portfolioRef, contactRef }) => {
   const theme = useTheme();
@@ -19,13 +19,14 @@ const Hero = ({ portfolioRef, contactRef }) => {
         bgcolor: theme.palette.background.default,
         color: theme.palette.primary.main,
         position: "relative",
-        // backgroundImage: `url(${Background})`,
+        backgroundImage: `url(${Background})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
         overflow: "hidden",
         py: { xs: 4, sm: 8, md: 12 },
+        mt: { xs: -3, sm: -2, md: -1 },
       }}
     >
       <Container maxWidth="lg" sx={{ py: 6 }}>
@@ -40,21 +41,27 @@ const Hero = ({ portfolioRef, contactRef }) => {
               variant="h1"
               gutterBottom
               sx={{
-                fontWeight: "bold",
+                fontWeight: "800",
                 fontSize: { xs: "4rem", sm: "5rem", md: "7rem" }, // font sizes for different breakpoints
               }}
             >
               {" "}
               Full Stack Developer
             </Typography>
-            <Typography variant="h4" gutterBottom>
+            <Typography
+              variant="h4"
+              gutterBottom
+              sx={{
+                fontWeight: "400",
+              }}
+            >
               From Concept to Completion - Let me Help You Turn Your Vision into
               a Reality!
             </Typography>
             <Box sx={{ mt: 4 }}>
               <Button
                 variant="contained"
-                color="primary"
+                color="secondary"
                 sx={{ mr: 3 }}
                 onClick={() => handleScrollToRef(contactRef)}
               >
@@ -62,7 +69,7 @@ const Hero = ({ portfolioRef, contactRef }) => {
               </Button>
               <Button
                 variant="outlined"
-                color="primary"
+                color="secondary"
                 onClick={() => handleScrollToRef(portfolioRef)}
               >
                 Portfolio
