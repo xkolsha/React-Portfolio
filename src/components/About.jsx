@@ -16,13 +16,14 @@ const About = () => {
           >
             <Typography
               variant="h2"
-              component="h2"
+              component="h1"
               align="center"
               gutterBottom
               sx={{
                 color: (theme) => theme.palette.primary.main,
                 pb: 4,
-                textAlign: { fontWeight: "bold", xs: "center", md: "left" },
+                fontWeight: "bold",
+                textAlign: { xs: "center", md: "left" },
               }}
             >
               My Journey

@@ -6,10 +6,11 @@ import Background from "../assets/images/WaveBackground.png";
 
 const Hero = ({ portfolioRef, contactRef }) => {
   const theme = useTheme();
-  // Function for smooth scrolling
+
   const handleScrollToRef = (ref) => {
     if (ref?.current) {
       ref.current.scrollIntoView({ behavior: "smooth" });
+      ref.current.focus({ preventScroll: true });
     }
   };
 
@@ -69,7 +70,7 @@ const Hero = ({ portfolioRef, contactRef }) => {
                 Contact Me
               </Button>
               <Button
-                variant="outlined"
+                variant="contained"
                 color="primary"
                 onClick={() => handleScrollToRef(portfolioRef)}
               >

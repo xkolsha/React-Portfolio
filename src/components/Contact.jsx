@@ -73,7 +73,7 @@ const Contact = () => {
               <Typography variant="body1" component="span">
                 linkedin.com/in/aviadkohn
               </Typography>
-            </Link>
+            </Link>{" "}
           </Stack>
         </Grid>
         <Grid
@@ -90,7 +90,7 @@ const Contact = () => {
             component="img"
             src={logoSrc}
             alt="3D Logo"
-            sx={{ maxWidth: "50%", height: "auto" }}
+            sx={{ maxWidth: { xs: "80%", md: "50%" }, height: "auto" }} // Adjusted for responsiveness
           />
         </Grid>
       </Grid>

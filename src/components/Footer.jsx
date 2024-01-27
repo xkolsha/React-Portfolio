@@ -16,7 +16,10 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <Box sx={{ bgcolor: "primary.main", color: "background.default" }}>
+    <Box
+      component="footer"
+      sx={{ bgcolor: "primary.main", color: "background.default" }}
+    >
       <Container maxWidth="lg" sx={{ py: 6 }}>
         <Grid
           container
@@ -37,13 +40,11 @@ function Footer() {
               a Reality!
             </Typography>
           </Grid>
-
           <Grid item xs={12} md={4} sx={{ textAlign: "center" }}>
             <Typography variant="body2" sx={{ my: 2 }}>
               &copy; {currentYear} Aviad Kohn. All Rights Reserved.
             </Typography>
           </Grid>
-
           <Grid
             item
             xs={12}

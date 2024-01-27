@@ -8,7 +8,6 @@ import {
   Button,
   CardMedia,
 } from "@mui/material";
-
 import factvImage from "../assets/images/factv.png";
 import atlanticImage from "../assets/images/Atlantic.jpeg";
 import fontasticImage from "../assets/images/Fontastic.jpeg";
@@ -74,6 +73,10 @@ const projects = [
 ];
 
 const Portfolio = () => {
+  const handleOpenLink = (url) => {
+    window.open(url, "_blank");
+  };
+
   return (
     <Container maxWidth="lg" sx={{ py: 6 }}>
       <Box sx={{ padding: 4 }}>
@@ -91,8 +94,8 @@ const Portfolio = () => {
           Portfolio
         </Typography>
         <Grid container spacing={4}>
-          {projects.map((project, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
+          {projects.map((project) => (
+            <Grid item xs={12} sm={6} md={4} key={project.title}>
               <Card
                 raised
                 sx={{
@@ -102,12 +105,12 @@ const Portfolio = () => {
               >
                 <CardMedia
                   component="img"
-                  sx={{ objectFit: "cover" }}
+                  sx={{ objectFit: "cover", height: 200 }}
                   image={project.imageSrc}
                   alt={project.title}
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
+                  <Typography gutterBottom variant="h5" component="h3">
                     {project.title}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
@@ -118,9 +121,7 @@ const Portfolio = () => {
                       <Button
                         variant="contained"
                         color="secondary"
-                        onClick={() =>
-                          window.open(project.deployedLink, "_blank")
-                        }
+                        onClick={() => handleOpenLink(project.deployedLink)}
                       >
                         Deployed App
                       </Button>
@@ -129,7 +130,7 @@ const Portfolio = () => {
                       <Button
                         variant="contained"
                         color="primary"
-                        onClick={() => window.open(project.repoLink, "_blank")}
+                        onClick={() => handleOpenLink(project.repoLink)}
                         sx={{ ml: 3 }}
                       >
                         GitHub Repo
@@ -139,7 +140,7 @@ const Portfolio = () => {
                       <Button
                         variant="outlined"
                         color="primary"
-                        onClick={() => window.open(project.videoLink, "_blank")}
+                        onClick={() => handleOpenLink(project.videoLink)}
                         sx={{ ml: 1 }}
                       >
                         Watch Video

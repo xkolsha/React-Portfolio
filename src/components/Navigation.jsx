@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 import {
   AppBar,
@@ -21,12 +21,8 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import logo from "../assets/images/V-Logo-white.png";
 
-function HideOnScroll(props) {
-  const { children, window } = props;
-  const trigger = useScrollTrigger({
-    target: window ? window() : undefined,
-  });
-
+function HideOnScroll({ children, window }) {
+  const trigger = useScrollTrigger({ target: window ? window() : undefined });
   return (
     <Slide appear={false} direction="down" in={!trigger}>
       {children}
@@ -43,20 +39,6 @@ const Navigation = ({ servicesRef, aboutRef, portfolioRef, contactRef }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const handleDrawerToggle = () => setDrawerOpen(!drawerOpen);
 
-  const navItems = [
-    { label: "Home", path: "/", ref: null },
-    { label: "Services", path: "/services", ref: servicesRef },
-    { label: "About", path: "/about", ref: aboutRef },
-    { label: "Portfolio", path: "/portfolio", ref: portfolioRef },
-    { label: "Contact Me", path: "/contact", ref: contactRef },
-  ];
-
-  // Social media links
-  const socialLinks = [
-    { icon: <GitHubIcon />, url: "https://github.com/xkolsha" },
-    { icon: <LinkedInIcon />, url: "https://www.linkedin.com/in/aviadkohn/" },
-  ];
-
   const scrollToSection = (ref) => {
     if (ref && ref.current) {
       ref.current.scrollIntoView({ behavior: "smooth" });
@@ -65,6 +47,19 @@ const Navigation = ({ servicesRef, aboutRef, portfolioRef, contactRef }) => {
     }
     setDrawerOpen(false);
   };
+
+  const navItems = [
+    { label: "Home", path: "/", ref: null },
+    { label: "Services", path: "/services", ref: servicesRef },
+    { label: "About", path: "/about", ref: aboutRef },
+    { label: "Portfolio", path: "/portfolio", ref: portfolioRef },
+    { label: "Contact Me", path: "/contact", ref: contactRef },
+  ];
+
+  const socialLinks = [
+    { icon: <GitHubIcon />, url: "https://github.com/xkolsha" },
+    { icon: <LinkedInIcon />, url: "https://www.linkedin.com/in/aviadkohn/" },
+  ];
 
   return (
     <>
@@ -76,8 +71,7 @@ const Navigation = ({ servicesRef, aboutRef, portfolioRef, contactRef }) => {
         >
           <Container maxWidth="xl">
             <Toolbar disableGutters>
-              {" "}
-              <Link
+              <NavLink
                 to="/"
                 aria-label="Home"
                 onClick={() => scrollToSection(null)}
@@ -87,7 +81,7 @@ const Navigation = ({ servicesRef, aboutRef, portfolioRef, contactRef }) => {
                   alt="logo"
                   style={{ height: "40px", marginRight: "10px" }}
                 />
-              </Link>
+              </NavLink>
               <Box
                 sx={{
                   flexGrow: 1,
@@ -98,7 +92,7 @@ const Navigation = ({ servicesRef, aboutRef, portfolioRef, contactRef }) => {
                 {navItems.map((item, index) => (
                   <Button
                     key={index}
-                    component={Link}
+                    component={NavLink}
                     to={item.path}
                     sx={{
                       color: "background.paper",
@@ -110,7 +104,7 @@ const Navigation = ({ servicesRef, aboutRef, portfolioRef, contactRef }) => {
                     {item.label}
                   </Button>
                 ))}
-              </Box>{" "}
+              </Box>
               <Box
                 sx={{
                   display: { xs: "none", md: "flex" },
@@ -145,7 +139,7 @@ const Navigation = ({ servicesRef, aboutRef, portfolioRef, contactRef }) => {
             </Toolbar>
           </Container>
         </AppBar>
-      </HideOnScroll>{" "}
+      </HideOnScroll>
       <Drawer anchor="right" open={drawerOpen} onClose={handleDrawerToggle}>
         <Box pt={8} sx={{ width: 250 }} role="presentation">
           <List>
@@ -160,7 +154,6 @@ const Navigation = ({ servicesRef, aboutRef, portfolioRef, contactRef }) => {
                 <ListItemText primary={item.label} sx={{ fontWeight: "400" }} />
               </ListItemButton>
             ))}
-            {/* Social Links in Drawer */}
             {socialLinks.map((link, index) => (
               <ListItemButton
                 key={index}

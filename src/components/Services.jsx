@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import {
   Card,
   CardContent,
@@ -41,20 +40,8 @@ const services = [
   },
 ];
 
-const lottieStyle = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  height: "100%",
-  width: "auto",
-  minHeight: "100%",
-  minWidth: "100%",
-};
-
 const Services = () => {
-  const theme = useTheme(); // Get the theme
-  const cardBorderRadius = theme.shape.borderRadius; // Get the border radius from the theme
+  const theme = useTheme();
 
   return (
     <Container maxWidth="lg" sx={{ py: 6 }}>
@@ -65,7 +52,7 @@ const Services = () => {
         gutterBottom
         sx={{
           fontWeight: "bold",
-          color: (theme) => theme.palette.primary.main,
+          color: theme.palette.primary.main,
           pb: 4,
         }}
       >
@@ -77,12 +64,10 @@ const Services = () => {
             <Grid item xs={12} sm={6} md={6} key={service.title}>
               <Card
                 raised
-                sx={{ height: "100%", borderRadius: cardBorderRadius }}
+                sx={{ height: "100%", borderRadius: theme.shape.borderRadius }}
               >
-                {" "}
-                {/* Apply the border radius */}
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
+                  <Typography gutterBottom variant="h5" component="h3">
                     {service.title}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
@@ -99,7 +84,17 @@ const Services = () => {
                   >
                     <Lottie
                       animationData={service.animationData}
-                      style={lottieStyle}
+                      style={{
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        height: "100%",
+                        width: "auto",
+                        minHeight: "100%",
+                        minWidth: "100%",
+                      }}
+                      aria-hidden="true"
                     />
                   </Box>
                 </CardContent>
@@ -110,16 +105,6 @@ const Services = () => {
       </Box>
     </Container>
   );
-};
-
-Services.propTypes = {
-  services: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      animationData: PropTypes.object.isRequired,
-    })
-  ),
 };
 
 export default Services;
